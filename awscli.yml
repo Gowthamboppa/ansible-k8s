@@ -21,6 +21,8 @@
         remote_src: yes
    - name: RUN THE COMMAND
      command: ./aws/install
+     args:
+        chdir: /usr/local/awscli/
      
    - name:
      get_url:
