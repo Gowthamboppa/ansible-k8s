@@ -20,9 +20,8 @@
         dest: /home/centos/
         remote_src: yes
    - name: RUN THE COMMAND
-     command: ./aws/install
-     args:
-        chdir: /home/centos/awscli/
+     command: ./aws/install --update
+     
      
    - name:
      get_url:
