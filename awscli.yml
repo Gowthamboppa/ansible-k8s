@@ -19,9 +19,10 @@
         src: /home/centos/awscli-exe-linux-x86_64.zip
         dest: /home/centos/
         remote_src: yes
-   - name: RUN THE COMMAND 
+   - name: RUN THE COMMAND
+     become: yes 
      command: sudo ./aws/install
-     become: yes
+     
    - name:
      get_url:
       url: https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '"' -f 4)/kops-linux-amd64
