@@ -16,7 +16,7 @@
         state: latest
    - name: unzipping the aws cli 
      unarchive:
-        src: /home/centos/awscli-exe-linux-x86_64.zip
+        src: awscli-exe-linux-x86_64.zip
         dest: /home/centos/
      
       
