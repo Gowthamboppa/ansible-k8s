@@ -21,7 +21,7 @@
         remote_src: yes
    - name: RUN THE COMMAND
      become: yes 
-     command: sudo ./aws/install
+     command: ./aws/install
      
    - name:
      get_url:
