@@ -19,6 +19,9 @@
         src: /home/centos/awscli-exe-linux-x86_64.zip
         dest: /home/centos/
         remote_src: yes
+   - name: run the command 
+     command: sudo ./aws/install
+       
      
       
       
