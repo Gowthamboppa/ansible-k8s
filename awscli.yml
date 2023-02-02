@@ -34,7 +34,7 @@
      url: https://github.com/kubernetes/kops/releases/download/${release_tag.stdout}/kops-linux-amd64
      dest: /usr/local/bin/kops
      mode: 0755
-    become: yes
+     become: yes
       
       
         
