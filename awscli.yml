@@ -23,13 +23,18 @@
      command: ./aws/install --update
      
      
-   - name: Download kops binary
-     become: yes
-     become_user: centos
-     command: https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '"' -f 4)/kops-linux-amd64
-     args:
-        chdir: /home/centos
-     
+   - name: Get latest release tag
+     shell: |
+      release_tag=$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '"' -f 4)
+      echo $release_tag
+     register: release_tag
+
+   - name: Download kops
+     get_url:
+     url: https://github.com/kubernetes/kops/releases/download/${release_tag.stdout}/kops-linux-amd64
+     dest: /usr/local/bin/kops
+     mode: 0755
+    become: yes
       
       
         
