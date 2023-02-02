@@ -23,12 +23,10 @@
      command: ./aws/install --update
      
      
-   - name: Get URL
-     become: yes
+   - name: INSTALLING THE KOPS
      get_url:
-        url: https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '\"' -f 4)/kops-darwin-amd64
-        dest: /usr/local/bin/kops
-     register: kops
+      url: https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '"' -f 4)/kops-linux-amd64
+      dest: /home/centos/
 
      
       
