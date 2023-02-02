@@ -22,7 +22,7 @@
    - name: RUN THE COMMAND
      command: ./aws/install
      args:
-        chdir: /usr/local/awscli/
+        chdir: /home/centos/awscli/
      
    - name:
      get_url:
