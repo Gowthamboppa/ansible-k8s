@@ -9,6 +9,14 @@
      get_url:
       url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
       dest: /home/centos/
+
+   - name: Install unzip
+      yum:
+        name: unzip
+        state: latest
+      
+      
+        
    
 ...
 
