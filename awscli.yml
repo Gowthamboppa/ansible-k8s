@@ -5,23 +5,27 @@
 
 
    tasks:
-   - name: Download the Package
+   - name: DOWNLOADING THE AWS CLI ZIP FILE 
      get_url:
       url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
       dest: /home/centos/
 
-   - name: Install unzip
+   - name: INSTALLING UNZIP
      yum:
         name: unzip
         state: latest
-   - name: unzipping the aws cli 
+   - name: UNZIPPING THE AWS CLI 
      unarchive:
         src: /home/centos/awscli-exe-linux-x86_64.zip
         dest: /home/centos/
         remote_src: yes
-   - name: run the command 
+   - name: RUN THE COMMAND 
      command: sudo ./aws/install
-       
+   - name:
+     get_url:
+      url: https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '"' -f 4)/kops-linux-amd64
+      dest: /home/centos/
+
      
       
       
