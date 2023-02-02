@@ -14,6 +14,11 @@
      yum:
         name: unzip
         state: latest
+   - name: unzipping the aws cli 
+     unarchive:
+        src: /home/centos/awscliv2.zip
+        dest: /home/centos
+     
       
       
         
