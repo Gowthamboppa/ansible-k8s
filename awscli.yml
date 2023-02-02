@@ -11,7 +11,7 @@
       dest: /home/centos/
 
    - name: Install unzip
-      yum:
+     yum:
         name: unzip
         state: latest
       
