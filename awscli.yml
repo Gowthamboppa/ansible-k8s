@@ -26,6 +26,7 @@
    - name: INSTALLING THE KOPS
      get_url:
       url: https://github.com/kubernetes/kops/releases/download/<version>/kops-linux-amd64
+      become: yes
       dest: /usr/local/bin/kops
    
    #- name: INSTALLING KUBECTL
