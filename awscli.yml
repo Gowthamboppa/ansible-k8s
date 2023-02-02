@@ -4,11 +4,14 @@
    become: yes
 
 
-   tasks:
-   - name: installing the aws cli
-     become: yes
-        get_url: "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" 
+  tasks:
+  - name: Download the Package
+      become: yes
+      get_url:
+        url: "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+
         dest: /home/centos
+   
 ...
 
 
