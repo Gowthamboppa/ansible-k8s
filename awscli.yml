@@ -3,7 +3,7 @@
    hosts: n1
    become: yes
    vars:
-     kubernetes_version: "1.20.2" 
+     kubernetes_version: "1.26.0" 
 
 
    tasks:
@@ -31,12 +31,6 @@
       dest: /usr/local/bin/
       remote_src: yes
 
-     
-     
-      
-      
-        
-   
 ...
 
 
