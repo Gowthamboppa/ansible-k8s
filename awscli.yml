@@ -28,7 +28,7 @@
    - name: Download kops binary
      become_user: centos
      get_url:
-        url: url: "https://github.com/kubernetes/kops/releases/download/{{ lookup("url", "https://api.github.com/repos/kubernetes/kops/releases/latest").json.tag_name }}/kops-linux-amd64"
+        url:  "https://github.com/kubernetes/kops/releases/download/{{ lookup("url", "https://api.github.com/repos/kubernetes/kops/releases/latest").json.tag_name }}/kops-linux-amd64"
         dest: /home/centos/kops
 
 
