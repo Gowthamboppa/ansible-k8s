@@ -2,6 +2,8 @@
  - name: CREATING THE K8S WORKSTATION
    hosts: n1
    become: yes
+   vars:
+     kubernetes_version: "1.20.2" 
 
 
    tasks:
@@ -23,10 +25,7 @@
      command: ./aws/install --update
      
      
-   - name: Download kubectl
-     vars:
-     kubernetes_version: "1.20.2"  
-     
+   - name: Download kubectl 
      get_url:
       url: https://dl.k8s.io/release/{{ kubernetes_version 1.20.2}}/bin/linux/amd64/kubectl
       dest: /usr/local/bin/kubectl
