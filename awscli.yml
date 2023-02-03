@@ -22,12 +22,14 @@
    - name: RUN THE COMMAND
      command: ./aws/install --update
      
-     vars:
-     kubernetes_version: "1.20.2"
+     
    - name: Download kubectl
      get_url:
       url: https://dl.k8s.io/release/{{ kubernetes_version 1.20.2}}/bin/linux/amd64/kubectl
       dest: /usr/local/bin/kubectl
+
+    vars:
+     kubernetes_version: "1.20.2"  
    
 
      
