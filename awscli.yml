@@ -64,11 +64,11 @@
   
    - name: Generate SSH keypair
      openssh_keypair:
-      path: /home/centos/.ssh/id_rsa
+      path: /usr/local/bin/.ssh/id_rsa
       state: present
 
    - name: Create a Kubernetes cluster using kops
-     shell: "/home/centos/kops create cluster --yes --state=s3://gowthamboppa1 --zones=us-east-1a,us-east-1b --node-count=2 --name=boppa.k8s.local"
+     shell: "/usr/local/bin/kops create cluster --yes --state=s3://gowthamboppa1 --zones=us-east-1a,us-east-1b --node-count=2 --name=boppa.k8s.local"
      register: kops_create_cluster
      ignore_errors: yes
       
