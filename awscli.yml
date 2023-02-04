@@ -55,7 +55,7 @@
      name:
         - botocore
         - boto3
-    state: present
+     state: present
 
    - name: CREATING S3 BUCKET NAME DIGITAL
      s3_bucket:
