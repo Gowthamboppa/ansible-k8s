@@ -59,7 +59,7 @@
       state: present
 
    - name: Create an S3 bucket
-     command: aws s3 mb s3://mybucket
+     command: "aws s3 mb s3://mybucket"
 
 
 
