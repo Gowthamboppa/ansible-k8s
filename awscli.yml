@@ -1,6 +1,6 @@
 ---
  - name: CREATING THE K8S WORKSTATION
-   hosts: n1
+   hosts: all
    become: yes
    vars:
      kubernetes_version: "1.26.0" 
