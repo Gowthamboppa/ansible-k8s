@@ -41,27 +41,11 @@
    - name: MAKE KUBECTL BINARY EXECUTABLE
      command: chmod +x /usr/local/bin/kubectl
 
-   - name: Update the package cache
-     yum:
-        name: epel-release
-        state: present
+   - name: Create an S3 bucket
+     aws_s3_bucket:
+        name: mydigital
 
-   - name: installing pip for installing boto3 and boyocore
-     yum:
-      name: python-pip
-      state: present
-      
-   - name: Install botocore and boto3
-     pip:
-      name:
-          - botocore
-          - boto3
-      state: present
 
-   - name: CREATING S3 BUCKET NAME DIGITAL
-     s3_bucket:
-      name: digital
-      state: present
 
 
      
