@@ -25,20 +25,20 @@
      command: ./aws/install --update
      
      
-   - name: Download kops binary
+   - name: DOWNLOADING THE KOPS BINARY
      get_url:
         url: https://github.com/kubernetes/kops/releases/download/v1.20.0/kops-linux-amd64
         dest: /usr/local/bin/kops
      
-   - name: Make kops binary executable
+   - name: MAKE KOPS BINARY EXECUTABLE
      command: chmod +x /usr/local/bin/kops
 
-   - name: Download kubectl binary
+   - name: DOWNLOADING KUBECTL BINARY
      get_url:
         url: https://dl.k8s.io/release/v1.26.0/bin/linux/amd64/kubectl
         dest: /usr/local/bin/kubectl
 
-   - name: Make kubectl binary executable
+   - name: MAKE KUBECTL BINARY EXECUTABLE
      command: chmod +x /usr/local/bin/kubectl
 
 
