@@ -33,7 +33,6 @@
      copy:
         src: /home/centos/kops-linux-amd64
         dest: /usr/local/bin/kops
-        force: yes
         
 
  
