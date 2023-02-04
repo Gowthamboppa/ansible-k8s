@@ -41,6 +41,12 @@
    - name: MAKE KUBECTL BINARY EXECUTABLE
      command: chmod +x /usr/local/bin/kubectl
 
+   - name: installing pip for installing boto3 and boyocore
+     yum:
+      name: python-pip
+      state: present
+
+
    - name: Install boto3 and botocore
      become: yes
      pip:
