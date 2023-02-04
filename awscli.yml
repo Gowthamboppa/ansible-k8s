@@ -41,6 +41,12 @@
    - name: MAKE KUBECTL BINARY EXECUTABLE
      command: chmod +x /usr/local/bin/kubectl
 
+   - name: Install boto3 and botocore
+     become: yes
+     pip:
+      name: boto3 botocore
+      state: present
+
    - name: CREATING S3 BUCKET NAME DIGITAL
      s3_bucket:
       name: digital
