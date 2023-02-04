@@ -32,7 +32,7 @@
      
    - name: Make kops binary executable
      command: chmod +x /usr/local/bin/kops
-     when: kops_download is changed
+    
 
     
 
