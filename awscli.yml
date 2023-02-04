@@ -58,11 +58,8 @@
           - boto3
       state: present
 
-   - name: Create S3 bucket
-     aws_s3:
-        bucket: mybucket123456
-        state: present
-
+   - name: Create an S3 bucket
+     command: aws s3 mb s3://mybucket
 
 
 
