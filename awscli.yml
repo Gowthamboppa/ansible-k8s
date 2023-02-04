@@ -31,7 +31,7 @@
         dest: /home/centos/
    - name: move to bin
      copy:
-        src: /tmp/kops-linux-amd64
+        src: /home/centos/kops-linux-amd64
         dest: /usr/local/bin/kops
         force: yes
         
