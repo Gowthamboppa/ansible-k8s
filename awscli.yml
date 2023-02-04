@@ -51,13 +51,6 @@
       name: python-pip
       state: present
 
-
-   - name: Install boto3 and botocore
-     become: yes
-     pip:
-      name: boto3 botocore
-      state: present
-
    - name: CREATING S3 BUCKET NAME DIGITAL
      s3_bucket:
       name: digital
