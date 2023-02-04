@@ -66,6 +66,14 @@
      openssh_keypair:
       path: /home/centos/.ssh/id_rsa
       state: present
+
+   - name: Create a Kubernetes cluster using kops
+     kops:
+      command: create_cluster
+      state: s3://gowthamboppa1
+      zones: us-east-1a,us-east-1b
+      node_count: 2
+      name: boppa.k8s.local
       
 
 
