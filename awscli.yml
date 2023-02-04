@@ -38,7 +38,7 @@
         url: https://dl.k8s.io/release/v1.26.0/bin/linux/amd64/kubectl
         dest: /usr/local/bin/kubectl
 
-   - name: Make kops binary executable
+   - name: Make kubectl binary executable
      command: chmod +x /usr/local/bin/kubectl
 
 
