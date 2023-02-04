@@ -50,6 +50,12 @@
      yum:
       name: python-pip
       state: present
+   - name: Install botocore and boto3
+     pip:
+     name:
+        - botocore
+        - boto3
+    state: present
 
    - name: CREATING S3 BUCKET NAME DIGITAL
      s3_bucket:
