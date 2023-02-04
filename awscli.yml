@@ -26,11 +26,9 @@
      
      
    - name: Download kops binary
-     get_url:
-        url: curl -LO https://github.com/kubernetes/kops/releases/download/v1.20.0/kops-linux-amd64
-        dest: /usr/local/bin/kops
-        mode: 0755
-      become: yes  
+     uri:
+        url: https://github.com/kubernetes/kops/releases/download/v1.20.0/kops-linux-amd64
+          
         
   
         
