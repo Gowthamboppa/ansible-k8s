@@ -62,9 +62,9 @@
         name: botocore
         version: "1.21.0"
         state: present
-   - name: creating aws bucket
-     amazon.aws.s3_bucket:
-        name: mys3bucket
+   
+   - amazon.aws.s3_bucket:
+        name: mys3bucket155351
         state: present
 
 
