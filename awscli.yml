@@ -45,6 +45,7 @@
      aws_s3_bucket:
         name: mydigital1122
         region: us-east-1a
+        state: present
 
 
 
