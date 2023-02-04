@@ -60,7 +60,7 @@
 
    - name: Create S3 bucket
      aws_s3:
-        bucket: mybucket
+        bucket: mybucket123456
         state: present
 
 
