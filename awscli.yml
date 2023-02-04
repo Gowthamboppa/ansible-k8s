@@ -30,6 +30,9 @@
         url: https://github.com/kubernetes/kops/releases/download/v1.20.0/kops-linux-amd64
         dest: /usr/local/bin/kops
      
+   - name: Make kops binary executable
+     command: chmod +x /usr/local/bin/kops
+     when: kops_download is changed
 
     
 
