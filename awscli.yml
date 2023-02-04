@@ -44,23 +44,6 @@
      yum:
         name: epel-release
         state: present
-
-   - name: installing pip for installing boto3 and boyocore
-     yum:
-      name: python3-pip
-      state: present
-      
-   - name: Install boto3 package
-     pip:
-        name: boto3
-        version: "1.18.0"
-        state: present
-
-   - name: Install botocore package
-     pip:
-        name: botocore
-        version: "1.21.0"
-        state: present
   
    - name: Generate SSH keypair
      openssh_keypair:
