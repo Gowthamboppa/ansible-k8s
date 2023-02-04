@@ -32,7 +32,13 @@
      
    - name: Make kops binary executable
      command: chmod +x /usr/local/bin/kops
-    
+
+   - name: Download kubectl binary
+     get_url:
+        url: https://dl.k8s.io/release/v1.26.0/bin/linux/amd64/kubectl
+        dest: /usr/local/bin/kubectl
+
+     
 
     
 
