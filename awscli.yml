@@ -56,10 +56,10 @@
       name:
           - botocore
           - boto3
+      version: "1.18.0,1.21.0"    
       state: present
 
-   - name: Create an S3 bucket
-     command: "aws s3 mb s3://mybucket"
+
 
 
 
