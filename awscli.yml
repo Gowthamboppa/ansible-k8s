@@ -61,6 +61,9 @@
         name: botocore
         version: "1.21.0"
         state: present
+   - name: Add centos7 user to kops group
+     become: yes
+     command: usermod -aG kops centos7
   
    - name: CREATING KOPS CLUSTER
      become: yes
