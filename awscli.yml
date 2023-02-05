@@ -62,9 +62,9 @@
         version: "1.21.0"
         state: present
   
- - name: CREATING KOPS CLUSTER
-   become: yes
-   command: kops create cluster --yes --state=s3://gowthamboppa1 --zones=us-east-1a,us-east-1b --node-count=2 --name=boppa.k8s.local  
+   - name: CREATING KOPS CLUSTER
+     become: yes
+     command: kops create cluster --yes --state=s3://gowthamboppa1 --zones=us-east-1a,us-east-1b --node-count=2 --name=boppa.k8s.local  
 
 
      
