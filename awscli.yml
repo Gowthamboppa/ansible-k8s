@@ -61,13 +61,13 @@
         name: botocore
         version: "1.21.0"
         state: present
-   - name: Add centos7 user to kops group
-     become: yes
-     command: usermod -aG kops centos7
+   - name: Create an S3 bucket to store the cluster state
+      s3_bucket:
+        name: gowthamboppa123
+        state: present
   
    - name: CREATING KOPS CLUSTER
-     become: yes
-     command: kops create cluster --yes --state=s3://gowthamboppa1 --zones=us-east-1a,us-east-1b --node-count=2 --name=boppa.k8s.local  
+     shell: kops create cluster --yes --state=s3://gowthamboppa1 --zones=us-east-1a,us-east-1b --node-count=2 --name=boppa.k8s.local  
 
 
      
