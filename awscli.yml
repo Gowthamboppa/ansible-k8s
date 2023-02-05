@@ -41,7 +41,7 @@
      command: chmod +x /usr/local/bin/kubectl
 
    - name: create S3 bucket
-     s3_bucket:
+     amazon.aws.s3_bucket:
         name: myansiblebucket123
         aws_access_key: mys3user
         aws_secret_key: YgY6A1@Q 
