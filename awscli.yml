@@ -40,19 +40,12 @@
    - name: MAKE KUBECTL BINARY EXECUTABLE
      command: chmod +x /usr/local/bin/kubectl
 
-   - name: create S3 bucket
-     s3_bucket:
-        name: myansiblebucket123
-        state: present
-        region: us-east-1b
-        aws_access_key: mys3user
-        aws_secret_key: YgY6A1@Q 
    - name: Generate SSH keypair
      openssh_keypair:
         path: /home/centos/.ssh/id_rsa
         state: present
    - name: Create the Kops cluster
-     command: kops create cluster --yes --state=s3://myansiblebucket123 --zones=us-east-1a,us-east-1b --node-count=2 --name=boppa.k8s.local        
+     command: kops create cluster --yes --state=s3://gowthamboppa1 --zones=us-east-1a,us-east-1b --node-count=2 --name=boppa.k8s.local        
 
     
 
