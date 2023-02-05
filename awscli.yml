@@ -62,7 +62,7 @@
         version: "1.21.0"
         state: present
    - name: Create an S3 bucket to store the cluster state
-      s3_bucket:
+     s3_bucket:
         name: gowthamboppa123
         state: present
   
