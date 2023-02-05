@@ -44,17 +44,30 @@
      yum:
         name: epel-release
         state: present
-  
-   - name: Generate SSH keypair
-     openssh_keypair:
-      path: /home/centos/.ssh/id_rsa
-      state: present
 
-   - name: Create a Kubernetes cluster using kops
-     shell: "/usr/local/bin/kops create cluster --yes --state=s3://gowthamboppa1 --zones=us-east-1a,us-east-1b --node-count=2 --name=boppa11.k8s.local"
-     register: kops_create_cluster
-     ignore_errors: yes
+   - name: installing pip for installing boto3 and boyocore
+     yum:
+      name: python3-pip
+      state: present
       
+   - name: Install boto3 package
+     pip:
+        name: boto3
+        version: "1.18.0"
+        state: present
+
+   - name: Install botocore package
+     pip:
+        name: botocore
+        version: "1.21.0"
+        state: present
+  
+   - name: Create Kops clusterssss
+     command: "kops create cluster --yes --state=s3://gowthamboppa1 --zones=us-east-1a,us-east-1b --node-count=2 --name=boppa.k8s.local"
+     register: result
+   - name: Show output
+     debug:
+        var: result
 
 
 
