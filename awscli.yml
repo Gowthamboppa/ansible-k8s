@@ -63,6 +63,7 @@
         state: present
   
    - name: Create Kops clusterssss
+     path: /usr/local/bin/kops
      command: "kops create cluster --yes --state=s3://gowthamboppa1 --zones=us-east-1a,us-east-1b --node-count=2 --name=boppa.k8s.local"
      register: result
    - name: Show output
