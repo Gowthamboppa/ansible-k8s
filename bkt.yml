@@ -26,9 +26,14 @@
     pip:
       name:
         - boto3
-        - botocore
       state: present
-      version: ">=1.18.0,>=1.21.0" 
+      version: 1.18.0
+  - name: Install Boto3 and Botocore
+    pip:
+      name:
+        -  botocore
+      state: present
+      version: 1.21.0
 
   - name: ensure bucket is created
     vars:
