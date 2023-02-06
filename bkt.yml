@@ -33,6 +33,6 @@
       aws_access_key: "{{ aws_access_key }}"
       aws_secret_key: "{{ aws_secret_key }}"
     environment:
-      KOPS_STATE_STORE: s3://k8-project-10001
+      KOPS_STATE_STORE: s3://sindhu123456
 
 ...
