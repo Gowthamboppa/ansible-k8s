@@ -1,43 +1,7 @@
----
-- name: creating s3 
-  hosts: all
-  become: yes
-  vars:
-      aws_access_key: "{{ lookup('env', 'mys3user') }}"
-      aws_secret_key: "{{ lookup('env', 'YgY6A1@Q') }}"
-
-  tasks:
-  - name: Install EPEL repository
-    yum:
-      name: epel-release
-      state: present
-
-  - name: Install Python 3.6 or later
-    yum:
-      name: python36
-      state: present
-
-  - name: Install pip
-    yum:
-      name: python3-pip
-      state: present
-
-  - name: Install Boto3 and Botocore
-    pip:
-      name:
-        - boto3
-      state: present
-      version: 1.18.0
-  - name: Install Boto3 and Botocore
-    pip:
-      name:
-        -  botocore
-      state: present
-      version: 1.21.0
 
   - name: ensure bucket is created
     vars:
-        ansible_python_interpreter: /usr/bin/python
+        ansible_python_interpreter: /usr/bin/python3
         aws_access_key: "{{ lookup('env', 'mys3user') }}"
         aws_secret_key: "{{ lookup('env', 'YgY6A1@Q') }}"
     s3_bucket:
