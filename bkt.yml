@@ -37,7 +37,7 @@
 
   - name: ensure bucket is created
     vars:
-        ansible_python_interpreter: /usr/bin/python3
+        ansible_python_interpreter: /usr/bin/python
         aws_access_key: "{{ lookup('env', 'mys3user') }}"
         aws_secret_key: "{{ lookup('env', 'YgY6A1@Q') }}"
     s3_bucket:
