@@ -28,7 +28,7 @@
         aws_access_key: "{{ lookup('env', 'mys3user') }}"
         aws_secret_key: "{{ lookup('env', 'YgY6A1@Q') }}"
     s3_bucket:
-      name: k8-project-10001
+      name: sindhu123456
       state: present
       aws_access_key: "{{ aws_access_key }}"
       aws_secret_key: "{{ aws_secret_key }}"
