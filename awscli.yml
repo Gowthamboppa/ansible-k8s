@@ -2,7 +2,7 @@
  - name: CREATING THE K8S WORKSTATION
    hosts: all
    become: yes
-   gather_facts: false
+
   
 
    tasks:
@@ -37,6 +37,8 @@
         url: https://dl.k8s.io/release/v1.26.0/bin/linux/amd64/kubectl
         dest: /usr/local/bin/kubectl
 
+    
+
    - name: MAKE KUBECTL BINARY EXECUTABLE
      command: chmod +x /usr/local/bin/kubectl
 
@@ -44,6 +46,8 @@
      openssh_keypair:
         path: /home/centos/.ssh/id_rsa
         state: present
+
+
    - name: Create K8s cluster
      shell: /usr/local/bin/kops create cluster --yes --state=s3://gowthamboppa1 --zones=us-east-1a,us-east-1b --node-count=2   --name=boppa.k8s.local --ssh-public-key /home/centos/.ssh/id_rsa.pub 
  
