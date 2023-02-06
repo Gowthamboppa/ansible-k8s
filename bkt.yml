@@ -19,8 +19,13 @@
 
   - name: Install pip
     yum:
-      name: python3-pip 'pip inatall --upgarde'
+      name: python3-pip
       state: present
+
+  - name: Upgrade pip
+    pip:
+      name: pip install --Upgrade
+      state: latest
 
   - name: Install Boto3 and Botocore
     pip:
