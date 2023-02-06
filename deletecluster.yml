@@ -8,6 +8,6 @@
    tasks:
 
    - name: Create delete cluster
-     shell: /usr/local/bin/kops delete cluster --yes --name=boppa.k8s.local --state=s3://sindhu123456  --ssh-public-key /home/centos/.ssh/id_rsa.pub 
+     shell: /usr/local/bin/kops delete cluster --name=boppa.k8s.local --yes  --state=s3://sindhu123456  --ssh-public-key /home/centos/.ssh/id_rsa.pub 
  
           
