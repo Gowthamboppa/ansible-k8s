@@ -42,24 +42,24 @@
    - name: MAKE KUBECTL BINARY EXECUTABLE
      command: chmod +x /usr/local/bin/kubectl
 
-   - name: Install Python 3
+   - name: INSTALL PYTHON 3
      yum:
       name: python3
       state: present
 
-   - name: Install pip
+   - name: INSTALLING PIP
      yum:
       name: python3-pip
       state: present
 
-   - name: Install boto3 and botocore libraries
+   - name: INSTALL boto3 AND botocore 
      pip:
       name:
         - boto3
         - botocore
       state: present
       executable: pip3
-   - name: ensure bucket is created
+   - name: MAKING BUCKET
      vars:
         ansible_python_interpreter: /usr/bin/python3
         aws_access_key: "{{ lookup('env', 'mys3user') }}"
@@ -73,13 +73,13 @@
       KOPS_STATE_STORE: s3://sindhu123456
   
 
-   - name: Generate SSH keypair
+   - name: GENERATING SSH KEYPAIR
      openssh_keypair:
         path: /home/centos/.ssh/id_rsa
         state: present
 
 
-   - name: Create K8s cluster
+   - name: CREATING K8S CLUSTER
      shell: /usr/local/bin/kops create cluster --yes --state=s3://sindhu123456 --zones=us-east-1a,us-east-1b --node-count=2   --name=boppa.k8s.local --ssh-public-key /home/centos/.ssh/id_rsa.pub 
  
           
