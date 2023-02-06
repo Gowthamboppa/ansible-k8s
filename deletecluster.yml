@@ -6,7 +6,12 @@
   
 
    tasks:
+   - name: Generate SSH keypair
+     openssh_keypair:
+        path: /home/centos/.ssh/id_rsa
+        state: present
+
    - name: Create K8s cluster
-     shell: /usr/local/bin/kops delete cluster  --state=s3://sindhu123456  --name=boppa.k8s.local --yes --ssh-public-key /home/centos/.ssh/id_rsa.pub 
+     shell: /usr/local/bin/kops delete cluster --name=boppa.k8s.local --state=s3://sindhu123456 --yes --ssh-public-key /home/centos/.ssh/id_rsa.pub 
  
           
