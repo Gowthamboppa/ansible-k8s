@@ -45,7 +45,7 @@
         path: /home/centos/.ssh/id_rsa
         state: present
    - name: Create K8s cluster
-     shell: /usr/local/bin/kops create cluster --yes --state=s3://gowthamboppa1 --zones=us-east-1a,us-east-1b --node-count=2 --name=boppa.k8s.local
+     shell: /usr/local/bin/kops create cluster --yes --state=s3://gowthamboppa1 --zones=us-east-1a,us-east-1b --node-count=2 -i /home/centos/.ssh/id_rsa.pub  --name=boppa.k8s.local
     
 
 
