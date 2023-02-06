@@ -1,0 +1,12 @@
+---
+ - name: CREATING THE K8S WORKSTATION
+   hosts: all
+   become: yes
+
+  
+
+   tasks:
+   - name: Create K8s cluster
+     shell: /usr/local/bin/kops delete cluster  --state=s3://sindhu123456  --name=boppa.k8s.local --yes --ssh-public-key /home/centos/.ssh/id_rsa.pub 
+ 
+          
